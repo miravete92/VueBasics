@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Declarative Rendering</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<script src="https://unpkg.com/vue"></script>
+	<h3>App1: Declarative Rendering</h3>
+	<div id='app'>
+		{{message}}
+	</div>
+	<h3>App2: Declarative Rendering: Parameters</h3>
+	<div id='app2'>
+		<span v-bind:title='message'>Hover here!</span>
+	</div>
+	<h3>App3: Conditionals and loops: if</h3>
+	<div id='app3'>
+		<span v-if='seen'>Now you see me</span>
+	</div>
+	<h3>App4: Conditionals and loops: for</h3>
+	<div id="app4">
+		<ol>
+			<li v-for='todo in todos'>
+				{{todo.text}}
+			</li>
+		</ol>
+	</div>
+	<h3>App5: Handling user input</h3>
+	<div id="app5">
+		<p>{{message}}</p>
+		<button v-on:click='reverseMessage'>Reverse Message</button>
+	</div>
+	<h3>App6: Handling user input: Text input</h3>
+	<div id="app6">
+		<p>{{message}}</p>
+		<input v-model='message'/>
+	</div>
+	<h3>App7: Components</h3>
+	<div id="app7">
+		<todo-item
+			v-for='item in groceryList'
+			v-bind:todo='item'
+			v-bind:key='item.id'>
+		</todo-item>
+	</div>
+	<script type="text/javascript" src="./app.js"></script>
+</body>
+</html>
